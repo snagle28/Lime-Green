@@ -33,11 +33,11 @@ public class MidMaskMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             _gonnaMove = true;
         }
-        if ((_gonnaMove) && ((Input.GetKeyDown(KeyCode.Alpha1)) || (Input.GetKeyDown(KeyCode.Alpha2))))
+        if ((_gonnaMove) && ((Input.GetKeyDown(KeyCode.Alpha1)) || (Input.GetKeyDown(KeyCode.Alpha3))))
         {
             _gonnaMove = false;
         }

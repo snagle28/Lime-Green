@@ -61,7 +61,7 @@ public class bckgMove : MonoBehaviour
             timer++;
         }
         
-        if (timer >= 350)
+        if (timer >= 500)
         {
             camReady = true;
         }
@@ -93,21 +93,18 @@ public class bckgMove : MonoBehaviour
 
         if (!moved)
         {
-            //if the background scene is ready to move, move it to the left until it reaches the camera 
-            //the x coordinate of the origin of each scene = the starting position - (scene# times width)
-            if (transform.position.x > startingPos - sceneNumber * myWidth + 5)
+            float target = startingPos - sceneNumber * myWidth;
+    
+            if (transform.position.x > target)
             {
-                currentPos.x -= speed * Time.deltaTime; 
+                currentPos.x -= speed * Time.deltaTime;
             }
-            else if  (transform.position.x <= startingPos + sceneNumber * myWidth)
+            else
             {
-                //reset variables in other script
                 ResetGlobalTrigger();
-                currentPos.x = startingPos - sceneNumber * myWidth + 5;
+                moved = false;
                 sceneNumber++;
-                moved = true;
             }
-
         }
         transform.position = currentPos;
     }
@@ -117,6 +114,7 @@ public class bckgMove : MonoBehaviour
         camReady = false;
         allAligned = false;
         timer = 0;
+        moved = false;
     }
    
 }

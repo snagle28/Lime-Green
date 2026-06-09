@@ -34,11 +34,11 @@ public class BigMaskMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             _gonnaMove = true;
         }
-        if ((_gonnaMove) && ((Input.GetKeyDown(KeyCode.Alpha2)) || (Input.GetKeyDown(KeyCode.Alpha3))))
+        if ((_gonnaMove) && ((Input.GetKeyDown(KeyCode.Alpha2)) || (Input.GetKeyDown(KeyCode.Alpha1))))
         {
             _gonnaMove = false;
         }
